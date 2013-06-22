@@ -38,6 +38,7 @@ remote_file "/usr/local/src/#{nodejs_tar}" do
   source "http://nodejs.org/dist/#{nodejs_tar_path}"
   checksum node[:nodejs][:checksum]
   mode 0644
+  action :create_if_missing
 end
 
 # --no-same-owner required overcome "Cannot change ownership" bug
